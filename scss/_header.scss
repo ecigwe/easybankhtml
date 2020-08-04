@@ -1,0 +1,64 @@
+.header {
+  nav {
+    padding: 1.0625rem 1.5rem;
+  }
+  &__logo {
+    img {
+      width: 8.8125rem;
+      height: 1.375rem;
+    }
+  }
+  &__menu {
+    //mobile
+    > span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background-color: $darkBlue;
+
+      &:not(:last-child) {
+        margin-bottom: 3px;
+      }
+    }
+  }
+  &__links {
+    a {
+      color: $grayishBlue;
+      transition: color 300ms ease-in-out;
+      position: relative;
+
+      &:hover {
+        color: $darkBlue;
+
+        &::before {
+          opacity: 1;
+        }
+      }
+      &::before {
+        position: absolute;
+        content: "";
+        display: block;
+        transition: opacity 300ms ease-in-out;
+        height: 5px;
+        background: linear-gradient(to right, $limeGreen, $brightCyan);
+
+        left: 0;
+        right: 0;
+        bottom: -30px;
+        opacity: 0;
+      }
+    }
+    &:not(:last-child) {
+      margin-right: 32px;
+    }
+  }
+  &__cta {
+    font-size: $font-sm;
+    color: $white;
+    text-decoration: none;
+    transition: opacity 300ms ease-in-out;
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+}
